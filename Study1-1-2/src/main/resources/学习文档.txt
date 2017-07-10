@@ -1,0 +1,11 @@
+1. 构建api controller这一层所有的写法
+2. 构建渲染层
+3. 静态资源处理
+4. Swagger2构建rest API文档
+5. 访问地址：http://localhost:8080/swagger-ui.html
+6. 统一的异常处理
+
+
+
+
+
