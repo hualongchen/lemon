@@ -5,7 +5,7 @@
 
 ### 有疑问和兴趣，请添加个人公众号
 
-![输入图片说明](http://7vij0b.com1.z0.glb.clouddn.com/1.jpg "在这里输入图片标题")
+![输入图片说明](http://7xordd.com1.z0.glb.clouddn.com/qrcode_for_gh_363af0fc9423_430.jpg "在这里输入图片标题")
 
 如您觉得该项目对您有用，欢迎点击右上方的**Star**按钮，给予支持！！
 
