@@ -53,6 +53,9 @@
 2. spring boot与mongodb整合应用
 3. spring boot 自带的actuator相关接口应用
 
+### Study 1-1-6
+1. rabbit与spring boot整合应用
+
 
 ## Spring cloud教程系列
 
