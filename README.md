@@ -23,7 +23,7 @@
 
 ### Study1-1-2
 1. Springboot构建api controller这一层所有的写法
-2. Springboot构建渲染层（volectry等）
+2. Springboot构建渲染层（volectory等）
 3. Springboot静态资源处理
 4. Swagger2构建rest API文档
 5. 访问地址：http://localhost:8080/swagger-ui.html
@@ -32,6 +32,26 @@
 ### Study 1-1-3
 1. AOP在springboot中应用
 2. logback在springboot中应用
+
+### Study 1-1-4
+1. jdbcTemplate在spring boot中应用
+2. jdbcTemplate的事务在spring boot中应用
+3. jdbcTemplate多数据源的应用切换
+
+###  Study 1-2-4
+1. mybatis和spring boot的整合应用
+2. mybatis多数据源进行注解切换应用
+3. generator 代码生成工具 基于maven插件应用
+
+### Study 1-1-5
+1. ehcache和spring boot的整合应用
+2. spring boot 定时任务的配置
+3. spring boot 同步任务，Async 异步调用的实践
+
+### Study 1-1-6
+1. spring boot与redis整合应用
+2. spring boot与mongodb整合应用
+3. spring boot 自带的actuator相关接口应用
 
 
 ## Spring cloud教程系列
