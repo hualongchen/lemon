@@ -52,6 +52,18 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		<!--进行web的渲染和spring  mvc的加载-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.1.1</version>
+		</dependency>
+
 
 		<!-- 生成数据库代码 -->
 		<dependency>
@@ -71,7 +83,7 @@
 		<dependency>
 			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper</artifactId>
-			<version>3.3.8</version>
+			<version>3.4.0</version>
 		</dependency>
 
 		<!--整合AOP切面-->

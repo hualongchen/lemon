@@ -86,3 +86,8 @@
 .后期更新
 ## 开发利器 教程系列
 .后期更新
+
+## 常用工具项目地址
+
+- Mybatis通用Mapper: https://github.com/abel533/Mapper
+- Mybatis通用分页插件: http://git.oschina.net/free/Mybatis_PageHelper

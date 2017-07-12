@@ -2,3 +2,22 @@
 
 2. genertor工具进行插件化应用
 
+1.此次主要整合druid 和mybatis
+
+步骤;
+
+公共部分：
+1. 利用genertor生成mapper，bean， *.xml文件等
+2. 利用注解配置mybatis等数据源
+3.通用的mapper
+4.通用的分页
+
+http://localhost:8080/druid/index.html
+
+
+
+单数据库时代
+
+1.一个数据库进行配置生成
+
+2. 多个数据库进行配置生成
