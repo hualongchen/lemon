@@ -38,11 +38,6 @@
 -  jdbcTemplate的事务在spring boot中应用
 -  jdbcTemplate多数据源的应用切换
 
-###  Study 1-2-4
--  mybatis和spring boot的整合应用
--  mybatis多数据源进行注解切换应用
--  generator 代码生成工具 基于maven插件应用
-
 ### Study 1-1-5
 -  ehcache和spring boot的整合应用
 -  spring boot 定时任务的配置
@@ -58,8 +53,22 @@
 
 
 ### Study 1-1-8
+- spring boot 整合dubbo 服务器端应用
+- spring boot 整合dubbo 客户端端应用
+- spring boot zookeeper 相关配置简介
 
-- spring boot 整合dubbo应用
+### Study 1-2-3
+- spring boot 整合 mybatis与通用mapper
+- spring boot 整合 mybatis的分页插件
+- spring boot 整合 （mybatis，druid,pagehelper等完整版)
+
+###  Study 1-2-4
+-  mybatis和spring boot的整合应用
+-  mybatis多数据源进行注解切换应用
+-  generator 代码生成工具 基于maven插件应用
+-  druid与spring boot多数据源整合应用
+
+
 
 
 ## Spring cloud教程系列
