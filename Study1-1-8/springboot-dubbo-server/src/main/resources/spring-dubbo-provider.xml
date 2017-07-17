@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">
+
+
+    <!-- 这是服务器端，服务提供者的配置dubbo-->
+
+    <dubbo:application name="springboot-dubbo-server" owner="LemonMT" organization="tongrong"/>
+
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}"/>
+
+    <!--这里指定采用dubbo来传输，也可以是 rmi-->
+    <dubbo:protocol name="dubbo" port="20880" />
+
+
+    <!--利用版本号来管理同一个接口，不同实现如果加上 execute="10" 指并发不能超过10个。version="1.0.1"进行解析版本号-->
+
+    <dubbo:service interface="com.lemon.chen.api.UserService" ref="userServiceImpl" group="first"  version="1.0.1"/>
+
+    <dubbo:service interface="com.lemon.chen.api.UserService" ref="userServiceImpl2" group="second" executes="20"/>
+
+
+    <dubbo:provider timeout="2000" retries="0" />
+
+</beans>
