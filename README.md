@@ -17,7 +17,7 @@
 -  建立骨干框架。
 -  修改项目启动的配置图片banner.txt
 -  Springboot的各种controller写法
--  spring boot的junit测试昂发
+-  spring boot的junit测试写法
 -  spring boot多环境文件的配置
 -  spring boot 配置文件属性展示
 
@@ -129,11 +129,18 @@
 ## 开发利器 教程系列
 
 ###Study 8-1-1
+- 集成通用mapper, mybatis，spring boot
+- 集成mybatis分页
+- 利用模板生成dao,service,web代码，方便单库单表操作
+- 借鉴来源： https://github.com/lihengming/spring-boot-api-project-seed
 
 .后期更新
 
 ## 常用工具项目地址
 
 - Mybatis通用Mapper: https://github.com/abel533/Mapper
-- Mybatis通用分页插件: http://git.oschina.net/free/Mybatis_PageHelper
+- Mybatis通用分页插件: https://github.com/pagehelper/pagehelper-spring-boot
+-  FastJSon通用包 ：https://github.com/Alibaba/fastjson/wiki/首页
+- Druid数据池 ： https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter/
+- 
 
