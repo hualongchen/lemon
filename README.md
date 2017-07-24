@@ -78,10 +78,14 @@
 
 ### Study 2-1-2
 - Cloud-eureka-server 为服务注册中心
--Cloud-service-consumer 为服务消费者，最前端用户
+- Cloud-service-consumer 为服务消费者，最前端用户
 - Cloud-user-server 为最底层的微服务
 - 注册中心端口8761， 消费者9001，微服务9000
 
+### Study 2-1-3
+-  服务注册中心沿用Study2-1-2的demo
+- 服务消费者，最前端用户沿用Study2-1-2的demo
+- 增加ribbon的基本用法
 
 .后期更新
 
