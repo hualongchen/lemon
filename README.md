@@ -69,11 +69,19 @@
 -  druid与spring boot多数据源整合应用
 
 
-
-
 ## Spring cloud教程系列
 
 ### Study 2-1-1
+- Spring Cloud Eureka 的基础配置和讲解
+- 基本属性在application.xml里面
+- 默认的eureka的端口为 8761
+
+### Study 2-1-2
+- Cloud-eureka-server 为服务注册中心
+-Cloud-service-consumer 为服务消费者，最前端用户
+- Cloud-user-server 为最底层的微服务
+- 注册中心端口8761， 消费者9001，微服务9000
+
 
 .后期更新
 
