@@ -1,0 +1,1 @@
+feign依托于ribbon发展的，所以建议使用feign。功能更加丰富强大
