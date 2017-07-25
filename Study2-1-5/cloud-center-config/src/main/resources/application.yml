@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: cloud-center-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://git.oschina.net/chenhualongjava/config-reop/
+server:
+  port: 9002
+
+

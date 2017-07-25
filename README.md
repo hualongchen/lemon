@@ -92,6 +92,12 @@
 - 服务消费者，最前端用户沿用Study2-1-2的demo
 - 增加feign的基本用法
 
+### Study 2-1-5
+-  cloud config分布式配置中心的应用
+-  测试配置中心地址： http://git.oschina.net/chenhualongjava/config-reop
+-后续增加集群化配置
+
+
 .后期更新
 
 
