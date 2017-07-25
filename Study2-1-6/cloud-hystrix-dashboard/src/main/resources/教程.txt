@@ -1,0 +1,15 @@
+1. 监控的三种模式
+默认的集群监控：通过URLhttp://turbine-hostname:port/turbine.stream开启，实现对默认集群的监控。
+指定的集群监控：通过URLhttp://turbine-hostname:port/turbine.stream?cluster=[clusterName]开启，实现对clusterName集群的监控。
+单体应用的监控：通过URLhttp://hystrix-app:port/hystrix.stream开启，实现对具体某个服务实例的监控
+
+注意： 前两者都对集群的监控，需要整合Turbine才能实现。
+
+
+2. 访问地址
+http://localhost:9004/hystrix
+
+3. 具体的监控页面
+http://localhost:9004/hystrix.stream
+
+
