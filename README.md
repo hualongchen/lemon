@@ -95,7 +95,9 @@
 ### Study 2-1-5
 -  cloud config分布式配置中心的应用
 -  测试配置中心地址： http://git.oschina.net/chenhualongjava/config-reop
--后续增加集群化配置
+- cloud config client 读取配置中心的应用
+- 利用actor的监控进行读取演示数据
+- httpl://localhost:9003/info
 
 
 .后期更新
