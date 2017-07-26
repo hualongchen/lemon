@@ -116,6 +116,11 @@ todo
 - 拦截器的实现
 - 异常处理
 
+### Study 2-2-1
+- Cloud-eureka-server 集群化
+- http://localhost:8762
+- http://localhost:8761
+- 统一使用集群的application应用名
 
 .后期更新
 
