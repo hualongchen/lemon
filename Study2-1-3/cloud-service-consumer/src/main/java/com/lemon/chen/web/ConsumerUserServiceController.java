@@ -22,9 +22,6 @@ public class ConsumerUserServiceController {
     RestTemplate restTemplate;
 
 
-
-
-
     @GetMapping("/consumer")
     public String dc() {
 
@@ -36,9 +33,6 @@ public class ConsumerUserServiceController {
         System.out.println(url);
         return restTemplate.getForObject(url, String.class);
     }
-
-
-
 
     /**
      * 直接使用ribbion负载后的template进行调用微服务
