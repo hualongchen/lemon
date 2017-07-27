@@ -111,6 +111,24 @@ public class CloudServiceConsumerApplication {
     }
 ```
 
+####2.6 落实到配置文件
+```
+开启重试机制
+spring.cloud.loadbalancer.retry.enabled=true
+断路器时间必须要大于Ribbon时间，不然不会重试
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=10000
+连接超时时间
+hello-service.ribbon.ConnectTimeout=250
+请求处理超时时间
+hello-service.ribbon.ReadTimeout=1000
+对所有的操作都进行重试机制
+hello-service.ribbon.OkToRetryOnAllOperations=true
+切换实例后的重试次数
+hello-service.ribbon.MaxAutoRetriesNextServer=2
+当前实例的重试次数
+hello-service.ribbon.MaxAutoRetries=1
+```
+
 ###3.0 实战案例与Demo
 
 https://github.com/hualongchen/lemon
