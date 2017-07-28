@@ -21,6 +21,7 @@
 1.   [Spring cloud 工具集合之EUREKA讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-1spring%20cloud工具集—eureka.md)
 2. [Spring cloud 工具集合之Ribbon讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-2Spring%20cloud工具集之Ribbon.md)
 3. [Spring cloud 工具集合之Feign讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-3Spring%20cloud工具集之Feign.md)
+4. [Spring cloud 工具集合之Hystrix讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-4Spring%20cloud工具集之hystrix.md)
 
 
 
