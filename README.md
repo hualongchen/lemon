@@ -14,14 +14,27 @@
 
 ### 基础工具类
 1.  [MarkDown基础教程](https://github.com/hualongchen/lemon/blob/master/doc/1-1-1%20MarkDown教程.md)
+2. [Linux安装mysql文档](https://github.com/hualongchen/lemon/blob/master/doc/1-1-2%20linux安装mysql.md)
+3. [ Linux安装jdk文档](https://github.com/hualongchen/lemon/blob/master/doc/1-1-3linux安装绝JDK.md)
+4. [rabbitmq学习教程](https://github.com/hualongchen/lemon/blob/master/doc/1-1-5rabbitmq.md)
 
 
 ### 技术整合类
 
+#### Spring boot系列
+1. [Spring boot war方式部署](https://github.com/hualongchen/lemon/blob/master/doc/2-2-1springbootwar包形式部署.md)
+2. [Spring boot 全局异常处理](https://github.com/hualongchen/lemon/blob/master/doc/3-2-2spring%20boot全局异常处理.md)
+3. [spring boot整合mybatis，druid等](https://github.com/hualongchen/lemon/blob/master/doc/3-3-1%20spring%20boot整合mybatis，druid等.md)
+4. [ Spring boot整合Spring session处理登陆状态](https://github.com/hualongchen/lemon/blob/master/doc/3-3-2Spring%20boot利用spring-session处理登陆状态.md)
+
+#### Spring cloud系列
 1.   [Spring cloud 工具集合之EUREKA讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-1spring%20cloud工具集—eureka.md)
 2. [Spring cloud 工具集合之Ribbon讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-2Spring%20cloud工具集之Ribbon.md)
 3. [Spring cloud 工具集合之Feign讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-3Spring%20cloud工具集之Feign.md)
 4. [Spring cloud 工具集合之Hystrix讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-4Spring%20cloud工具集之hystrix.md)
+
+
+
 
 
 
