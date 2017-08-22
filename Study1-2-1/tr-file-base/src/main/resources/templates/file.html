@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+
+<input type="text"
+       placeholder="请输入用户" maxlength="16" id="username" />
+<br/>
+<input type="text"
+       placeholder="请输入合同号" maxlength="20" id="agreement" />
+<br/>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    文件：<input type="file" name="file" id="file"/>
+    <br/>
+    <input type="button" onclick="upload()" />
+</form>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+    // 去掉空格
+    function trim(str) {
+        return str;
+    }
+
+    function upload() {
+
+        var formData = new FormData();
+        var name = $("#username").val();
+        var argeementid=$("#agreement").val();
+        formData.append("file",$("#file")[0].files[0]);
+        formData.append("username",name);
+        formData.append("argeementid",argeementid);
+        $.ajax({
+            type: "post",
+            url: "/upload2",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+
+
+                alert(data.code);
+                alert("上传完毕");
+            }
+        });
+    }
+</script>
+</body>
+</html>

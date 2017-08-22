@@ -1,0 +1,13 @@
+1. 包含最新的mybatis，分页， druid等技术。
+2.包含最新lombox使用验证，全局异常等。
+3.最新使用spring-session，进行session校验
+4.util包含：
+
+         1. 二维码生成
+         2. session管理
+         3.腾讯云上传文件
+         4.redis的管理
+         5.加密算法
+         6.通用返回值
+         7.lombok的超级用法
+

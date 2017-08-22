@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="css/component.css"/>
+    <!--[if IE]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container demo-1">
+    <div class="content">
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
+            <div class="logo_box">
+                <h3>通融小贷欢迎你</h3>
+                <form action="#" name="f" method="post">
+                    <div class="input_outer">
+                        <span class="u_user"></span>
+                        <input name="logname" class="text" style="color: #FFFFFF !important" type="text"
+                               placeholder="请输入账户" maxlength="6" id="username"/>
+                    </div>
+                    <div class="input_outer">
+                        <span class="us_uer"></span>
+                        <input name="logpass" class="text"
+                               style="color: #FFFFFF !important; position:absolute; z-index:100;" value=""
+                               type="password" placeholder="请输入密码" maxlength="10" id="password"/>
+                    </div>
+                    <div class="mb2"><a class="act-but submit"  style="color: #FFFFFF" onclick="login()">登录</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->
+<script src="js/TweenLite.min.js"></script>
+<script src="js/EasePack.min.js"></script>
+<script src="js/rAF.js"></script>
+<script src="js/demo-1.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+    // 去掉空格
+    function trim(str) {
+        return str;
+    }
+
+    function login() {
+
+        var username = $("#username").val();
+
+        var password = $("#password").val();
+
+
+
+        if(""==username ||null==username ){
+
+            alert("请填写正确的用户名");
+            return ;
+        }
+
+        if(""==password ||null==password ){
+
+            alert("请填写正确的密码");
+            return ;
+        }
+
+
+        $.ajax({
+            type: "POST",
+            url: "/login",
+            data: {
+                "userName": username,
+                "password":password
+            },
+            success: function (data) {
+                data = trim(data);
+
+                eval(data);
+
+                if (data.code == 200) {
+
+
+                    window.location.href='/file';
+
+                } else {
+
+                    alert(data.msg);
+                }
+            },
+            error: function () {
+                alert("系统繁忙，请稍后再试!");
+            }
+        });
+    }
+</script>
+</body>
+</html>

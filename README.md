@@ -71,6 +71,14 @@
 - spring boot 整合dubbo 客户端端应用
 - spring boot zookeeper 相关配置简介
 
+### Study 1-2-1
+- spring boot 与lombox的整合
+- spring boot全局异常进行注解
+- spring boot 生成二维码
+- spring boot 与spring session进行整合
+
+
+
 ### Study 1-2-3
 - spring boot 整合 mybatis与通用mapper
 - spring boot 整合 mybatis的分页插件

@@ -394,3 +394,4 @@ public class RabbitMqConsumer {
 
 
 
+

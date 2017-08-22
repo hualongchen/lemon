@@ -1,0 +1,14 @@
+1. 最新的druid，generatorconfig.xml，分页，通用mapper等整理和集成。
+
+2. 进行全局异常的捕获和集成。
+
+3. 进行validate校验的集成，并集成到全局捕获里面。
+
+3. 登陆功能
+
+4. 持续登陆的验证
+
+5. spring -session的集成
+
+6. lombok的集成使用
+
