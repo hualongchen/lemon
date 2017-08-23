@@ -26,6 +26,7 @@
 2. [Spring boot 全局异常处理](https://github.com/hualongchen/lemon/blob/master/doc/3-2-2spring%20boot全局异常处理.md)
 3. [spring boot整合mybatis，druid等](https://github.com/hualongchen/lemon/blob/master/doc/3-3-1%20spring%20boot整合mybatis，druid等.md)
 4. [ Spring boot整合Spring session处理登陆状态](https://github.com/hualongchen/lemon/blob/master/doc/3-3-2Spring%20boot利用spring-session处理登陆状态.md)
+5. [Spring boot综合教程](https://github.com/hualongchen/lemon/blob/master/doc/Spring%20boot教程.md)
 
 #### Spring cloud系列
 1.   [Spring cloud 工具集合之EUREKA讲解](https://github.com/hualongchen/lemon/blob/master/doc/2-1-1spring%20cloud工具集—eureka.md)

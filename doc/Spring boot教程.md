@@ -2,7 +2,7 @@
 
 ### 1 Spring boot 入门
 
-#### 1.1 spring boot初始化的maven配置
+####  1.1 spring boot初始化的maven配置
 
 ```
 <parent>
@@ -62,7 +62,7 @@ com.lemon.company.desc=${com.lemon.name}\u52AA\u529B\u7684\u5728\u5199demo${com.
 spring.profiles.active=dev
 ```
 
-#### 1.3 修改项目启动的banner
+####  1.3 修改项目启动的banner
 
 > 在resources下面新建一个banner.txt，在里面增加图案
 
@@ -91,7 +91,7 @@ spring.profiles.active=dev
 ////////////////////////////////////////////////////////////////////
 ```
 
-#### 1.4 项目中获取application里面的参数值
+####  1.4 项目中获取application里面的参数值
 
 ```
 @Component
@@ -130,7 +130,7 @@ public class ApplicationContents {
 
 ```
 
-#### 1.5 第一个简单的controller
+####  1.5 第一个简单的controller
 
 ```
 @RestController
@@ -150,7 +150,7 @@ public class HelloController {
 }
 ```
 
-#### 1.6 简单的单元测试(利用MVC进行测试)
+####  1.6 简单的单元测试(利用MVC进行测试)
 
 ```
 package com.lemon.chen;
@@ -264,9 +264,9 @@ public class ApplicationTests {
 ```
 
 
-#### 1.7 增加全局异常判断
+####  1.7 增加全局异常判断
 
-#####1.7.1  增加自定义业务异常
+##### 1.7.1  增加自定义业务异常
 ```
 package com.lemon.chen.util;
 
@@ -283,7 +283,7 @@ public class BusinessException extends Exception {
 
 ```
 
-#####1.7.2 全局异常捕获
+#####  1.7.2 全局异常捕获
 
 ```
 package com.lemon.chen.util;
@@ -341,9 +341,9 @@ public class GlobalExceptionHandler {
 
 ```
 
-#### 1.8 使用Swagger2 进行api调试定义
+####  1.8 使用Swagger2 进行api调试定义
 
-##### 1.8.1 增加Swagger2 的maven定义
+#####  1.8.1 增加Swagger2 的maven定义
 
 ```
 <!--增加swagger API文档包-->
@@ -360,7 +360,7 @@ public class GlobalExceptionHandler {
 
 ```
 
-##### 1.8.2 增加Swagger2的工具定义类
+#####  1.8.2 增加Swagger2的工具定义类
 
 ```
 package com.lemon.chen.util;
@@ -409,7 +409,7 @@ public class SwaggerUtil {
 
 ```
 
-##### 1.8.3在web应用添加接口注释
+#####  1.8.3在web应用添加接口注释
 
 ```
 
@@ -459,14 +459,14 @@ public class SwaggerUtil {
 
 ```
 
-##### 1.8.4  进行web UI进行访问和管理
+#####  1.8.4  进行web UI进行访问和管理
 
 >   http://localhost:8080/swagger-ui.html
 
 
-#### 1.9 使用模板进行web开发
+####  1.9 使用模板进行web开发
 
-#####1.9.1 添加对应的maven
+#####  1.9.1 添加对应的maven
 
 ```
        <groupId>org.springframework.boot</groupId>
@@ -492,7 +492,7 @@ public class SwaggerUtil {
 
 ```
 
-#####1.9.2 添加application配置文件属性
+#####  1.9.2 添加application配置文件属性
 
 ```
 spring.thymeleaf.cache=true
@@ -507,7 +507,7 @@ spring.thymeleaf.suffix=.html
 
 ```
 
-#####1.9.3 静态资源文件存放
+#####  1.9.3 静态资源文件存放
 
 1. JS，css， Img此类文件存放在resource下面的static文件夹中。
 
@@ -529,7 +529,7 @@ FreeMarker模板引擎
 </html>
 ```
 
-##### 1.9.4 web层进行访问
+#####  1.9.4 web层进行访问
 
 ```
 @Controller
@@ -548,7 +548,7 @@ public class HtmlController {
 ```
 #### 2.1 spring boot使用AOP
 
-##### 2.1.1 加入需要使用的maven
+#####  2.1.1 加入需要使用的maven
 
 ```
 <!--面向切面编程-->
@@ -559,7 +559,7 @@ public class HtmlController {
 
 ```
 
-#####2.1.2 AOP相关的注解解释
+#####  2.1.2 AOP相关的注解解释
 1. 使用@Aspect注解将一个java类定义为切面类
 2. 使用@Pointcut定义一个切入点，可以是一个规则表达式，比如下例中某个package下的所有函数，也可以是一个注解等。
 根据需要在切入点不同位置的切入内容
@@ -569,7 +569,7 @@ public class HtmlController {
 6. 使用@Around在切入点前后切入内容，并自己控制何时执行切入点自身的内容
 7. 使用@AfterThrowing用来处理当切入内容部分抛出异常之后的处理逻辑
 
-#####2.1.3 AOP在application配置文件属性
+#####  2.1.3 AOP在application配置文件属性
 
 ```
 spring.aop.auto=true
@@ -578,7 +578,7 @@ spring.output.ansi.enabled=ALWAYS
 ```
 
 
-#####2.1.4AOP具体事例(一般打印日志，进行切面访问)
+#####   2.1.4AOP具体事例(一般打印日志，进行切面访问)
 
 ```
 package com.lemon.chen.aop;
@@ -659,7 +659,7 @@ public class AccessAspect {
 
 #### 2.2 使用Logback进行日志管理
 
-#####2.2.1  使用通用的logback.xml
+#####  2.2.1  使用通用的logback.xml
 
 ```
 <configuration  scanPeriod="30 seconds" debug="false">
@@ -1102,7 +1102,7 @@ public class Study114ApplicationTests {
 ```
 
 #### 2.4 spring boot进行监控
-##### 2.4.1 增加maven的依赖
+#####  2.4.1 增加maven的依赖
 
 ```
             <dependency>
@@ -1111,7 +1111,7 @@ public class Study114ApplicationTests {
 		</dependency>
 ```
 
-#####2.4.2 进行application的设置
+#####  2.4.2 进行application的设置
 
 ```
 关闭权限配置，一般敏感信息不让访问
@@ -1119,7 +1119,7 @@ management.security.enabled=false
 ```
 
 
-##### 2.4.3 进行监控连接的访问
+#####  2.4.3 进行监控连接的访问
 ```
 ID	描述	敏感（Sensitive）
 autoconfig	显示一个auto-configuration的报告，该报告展示所有auto-configuration候选者及它们被应用或未被应用的原因	true
@@ -1136,7 +1136,7 @@ trace	显示trace信息（默认为最新的一些HTTP请求）	true
 ```
 #### 2.5 spring boot集成rabbitmq
 
-#####2.5.1 增加maven依赖
+#####  2.5.1 增加maven依赖
 
 ```
 <dependency>
@@ -1167,7 +1167,7 @@ trace	显示trace信息（默认为最新的一些HTTP请求）	true
 			<version>1.8.3</version>
 		</dependency>
 ```
-##### 2.5.2 增加application的配置
+#####  2.5.2 增加application的配置
 
 ```
 spring.application.name=lemon-rabbitmq
@@ -1179,7 +1179,7 @@ spring.rabbitmq.virtualHost=/
 spring.rabbitmq.publisher-confirms=true
 ```
 
-#####2.5.3 实现工厂，进行reabbitmq连接
+#####  2.5.3 实现工厂，进行reabbitmq连接
 
 ```
 package com.lemon.chen.rabbitUtil;
@@ -1244,7 +1244,7 @@ public class RabbitmqFactoryUtil {
 }
 
 ```
-#####2.5.4  生产者是这个样子的
+#####  2.5.4  生产者是这个样子的
 
 ```
 package com.lemon.chen.rabbitUtil;
@@ -1410,7 +1410,7 @@ public class RabbitMqProvider {
 }
 ```
 
-##### 2.5.5 消费者是这个样子的
+#####   2.5.5 消费者是这个样子的
 
 ```
 package com.lemon.chen.rabbitUtil;
