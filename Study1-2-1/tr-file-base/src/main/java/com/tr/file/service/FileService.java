@@ -40,8 +40,12 @@ public class FileService {
             return new ResultVO(ErrorContent.FILE_UPLOAD_FAILE_CODE, ErrorContent.USER_NOT_LOGIN_MESSAGE);
 
         }
-        po.setFileid(po.getFileid());
-        po.setUsername(po.getUsername());
+        po.setArgeementid(form.getArgeementid());
+        po.setAccessurl(form.getAccessUrl());
+        po.setFilevid(form.getVid());
+        po.setSourcepath(form.getResourcePath());
+        po.setSourceurl(form.getSourceUrl());
+        po.setUsername(form.getUsername());
 
         filePOMapper.insertSelective(po);
 

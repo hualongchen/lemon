@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.qcloud.cos.COSClient;
 
+import com.qcloud.cos.meta.InsertOnly;
 import com.qcloud.cos.request.*;
 import com.tr.file.modul.file.FileForm;
 import com.tr.file.service.FileService;
@@ -15,6 +16,7 @@ import com.tr.file.util.tencent.TencentFileUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,6 +29,15 @@ import java.io.File;
 @Slf4j
 @Controller
 public class FileController {
+
+    @Value("${tencent.appId}")
+    private long appId;
+
+    @Value("${tencent.secretId}")
+    private String secretId;
+
+    @Value("${tencnet.secretKey}")
+    private String secretKey;
 
 
     @Autowired
@@ -49,41 +60,9 @@ public class FileController {
 
         if (null == session.getAttribute("TR_USER")) {
 
-            return "file";
+            return "login";
         }
         return "file";
-    }
-
-
-    /**
-     * 测试存放到服务器本地
-     * @param request
-     * @param file
-     * @param form
-     * @return
-     */
-    @PostMapping("/upload2")
-    @ResponseBody
-    @SneakyThrows
-    public ResultVO upLoadFile2(HttpServletRequest request, @RequestParam("file") MultipartFile file, FileForm form) {
-
-
-        String fileName = file.getOriginalFilename();
-
-        if (null != fileName && fileName.trim() != "") {
-
-            //byte[] contentBuffer = file.getBytes();
-
-            File file2  = new File("/Users/chenhualong/Documents/dev_tool/"+fileName);
-
-            
-            
-
-            file.transferTo(file2);
-        }
-
-
-        return new ResultVO();
     }
 
 
@@ -112,11 +91,14 @@ public class FileController {
         }
 
         String fileName = file.getOriginalFilename();
-        /**
-         * 进行文件的上传
-         */
 
-        COSClient client = TencentFileUtil.getClient();
+        /**
+         * 检查是否上传文件
+         */
+        if (null == fileName || fileName.trim() == "") {
+
+            return new ResultVO(ErrorContent.FILE_NOTEXIT_CODE, ErrorContent.FILE_NOTEXIT_CODE_MESSAGE);
+        }
 
         //目录
         String bucketName = "compact";
@@ -134,24 +116,48 @@ public class FileController {
         }
 
 
-        if (null != fileName && fileName.trim() != "") {
+        /**
+         * 将MultipartFile 转化为File 存储到本地临时目录
+         */
+        String localFilePath = "/Users/chenhualong/Desktop" + cosFilePath;
+        File loacFile = new File(localFilePath);
 
-            byte[] contentBuffer = file.getBytes();
+        file.transferTo(loacFile);
 
-            UploadFileRequest FileRequest = new UploadFileRequest(bucketName, cosFilePath, contentBuffer);
 
-            String uploadFileRet = client.uploadFile(FileRequest);
+        /**
+         * 进行文件的上传
+         */
 
-            JSONObject jsonObject = JSON.parseObject(uploadFileRet);
+        String uploadFileRet = TencentFileUtil.uploadFile(bucketName,cosFilePath,localFilePath,appId,secretId,secretKey);
 
-            TencentFileUtil.closeClient(client);
+        JSONObject jsonObject = JSON.parseObject(uploadFileRet);
 
-            if (!jsonObject.getString("code").equals("200")) {
+        log.info("上传文件后结果:" + jsonObject.toString());
 
-                return new ResultVO(ErrorContent.FILE_UPLOAD_FAILE_CODE, ErrorContent.FILE_UPLOAD_FAILE_MESSAGE);
-            }
+        if (!jsonObject.getString("code").equals("0")) {
 
+            return new ResultVO(ErrorContent.FILE_UPLOAD_FAILE_CODE, ErrorContent.FILE_UPLOAD_FAILE_MESSAGE);
         }
+
+        JSONObject jsonObject1 = jsonObject.getJSONObject("data");
+
+        form.setAccessUrl(jsonObject1.getString("access_url"));
+        form.setResourcePath(jsonObject1.getString("resource_path"));
+        form.setVid(jsonObject1.getString("vid"));
+        form.setSourceUrl(jsonObject1.getString("source_url"));
+
+        /**
+         * 删除临时文件
+         */
+        if (loacFile.isFile() && loacFile.exists()) {
+
+            loacFile.delete();
+        }
+
+        /**
+         * 存库绑定关系
+         */
 
         return service.uploadFile(form);
     }

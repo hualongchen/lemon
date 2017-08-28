@@ -8,11 +8,17 @@ public class TrFilePO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String fileid;
+    private String filevid;
 
     private String username;
 
     private String argeementid;
+
+    private String accessurl;
+
+    private String sourceurl;
+
+    private String sourcepath;
 
     /**
      * @return id
@@ -29,17 +35,17 @@ public class TrFilePO {
     }
 
     /**
-     * @return fileid
+     * @return filevid
      */
-    public String getFileid() {
-        return fileid;
+    public String getFilevid() {
+        return filevid;
     }
 
     /**
-     * @param fileid
+     * @param filevid
      */
-    public void setFileid(String fileid) {
-        this.fileid = fileid == null ? null : fileid.trim();
+    public void setFilevid(String filevid) {
+        this.filevid = filevid == null ? null : filevid.trim();
     }
 
     /**
@@ -68,5 +74,47 @@ public class TrFilePO {
      */
     public void setArgeementid(String argeementid) {
         this.argeementid = argeementid == null ? null : argeementid.trim();
+    }
+
+    /**
+     * @return accessurl
+     */
+    public String getAccessurl() {
+        return accessurl;
+    }
+
+    /**
+     * @param accessurl
+     */
+    public void setAccessurl(String accessurl) {
+        this.accessurl = accessurl == null ? null : accessurl.trim();
+    }
+
+    /**
+     * @return sourceurl
+     */
+    public String getSourceurl() {
+        return sourceurl;
+    }
+
+    /**
+     * @param sourceurl
+     */
+    public void setSourceurl(String sourceurl) {
+        this.sourceurl = sourceurl == null ? null : sourceurl.trim();
+    }
+
+    /**
+     * @return sourcepath
+     */
+    public String getSourcepath() {
+        return sourcepath;
+    }
+
+    /**
+     * @param sourcepath
+     */
+    public void setSourcepath(String sourcepath) {
+        this.sourcepath = sourcepath == null ? null : sourcepath.trim();
     }
 }

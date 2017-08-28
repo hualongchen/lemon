@@ -44,6 +44,10 @@ public class ErrorContent {
 
     public static String FILE_UPLOAD_FAILE_MESSAGE="文件上传失败";
 
+    public static String FILE_NOTEXIT_CODE="1012";
+
+    public static String FILE_NOTEXIT_CODE_MESSAGE="请上传文件";
+
 
 
 

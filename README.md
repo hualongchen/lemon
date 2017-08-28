@@ -156,6 +156,10 @@
 ## Spring Mvc 教程系列
 
 ###Study 3-1-1
+- 增加spring mvc的基本配置
+- dubbo 在 mvc的基本使用
+- redis的在 mvc的基本使用
+- mybatis等在mvc中的使用
 
 . 后期更新
 

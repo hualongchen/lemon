@@ -9,17 +9,21 @@ import java.io.Serializable;
 @Data
 public class FileForm implements Serializable {
 
-
-    private String fileid;
-
     @NotBlank
     private String username;
 
     @NotBlank
     private String argeementid;
 
+    private String sourceUrl ;
 
-    private  String fileName ;
+    private String vid ;
+
+    private String resourcePath ;
+
+    private String accessUrl ;
+
+
 
 
 }

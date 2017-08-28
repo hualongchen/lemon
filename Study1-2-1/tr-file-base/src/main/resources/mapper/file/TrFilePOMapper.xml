@@ -6,8 +6,11 @@
       WARNING - @mbg.generated
     -->
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="fileid" property="fileid" jdbcType="VARCHAR" />
+    <result column="filevid" property="filevid" jdbcType="VARCHAR" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="argeementid" property="argeementid" jdbcType="VARCHAR" />
+    <result column="accessurl" property="accessurl" jdbcType="VARCHAR" />
+    <result column="sourceurl" property="sourceurl" jdbcType="VARCHAR" />
+    <result column="sourcepath" property="sourcepath" jdbcType="VARCHAR" />
   </resultMap>
 </mapper>

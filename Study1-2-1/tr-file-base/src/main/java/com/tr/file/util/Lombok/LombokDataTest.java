@@ -1,7 +1,6 @@
 package com.tr.file.util.Lombok;
 
 
-import com.lemon.chen.controller.user.form.LoginForm;
 import lombok.Data;
 
 /**
@@ -19,7 +18,7 @@ import lombok.Data;
 @Data
 public class LombokDataTest {
 
-    private LoginForm loginForm;
+   // private LoginForm loginForm;
 
     private String username;
 

@@ -1,7 +1,6 @@
 package com.tr.file.util.Lombok;
 
 
-import com.lemon.chen.controller.user.form.LoginForm;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NonNull;
@@ -14,7 +13,7 @@ public class LombokForm {
     /**
      * 防止空指针
      */
-    @NonNull @Setter @Getter private LoginForm   loginForm ;
+    //@NonNull @Setter @Getter private LoginForm   loginForm ;
 
     @Setter @Getter private String username ;
 

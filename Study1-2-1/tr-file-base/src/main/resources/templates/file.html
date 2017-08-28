@@ -18,7 +18,7 @@
 <form action="/upload" method="POST" enctype="multipart/form-data">
     文件：<input type="file" name="file" id="file"/>
     <br/>
-    <input type="button" onclick="upload()" />
+    <input type="button" onclick="upload()" placeholder="点击上传"/>
 </form>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -39,15 +39,20 @@
         formData.append("argeementid",argeementid);
         $.ajax({
             type: "post",
-            url: "/upload2",
+            url: "/upload",
             data: formData,
             contentType: false,
             processData: false,
             success: function (data) {
 
 
-                alert(data.code);
-                alert("上传完毕");
+               if(data.code == 0){
+
+                   alert("上传成功");
+               }else{
+
+                   alert(data.message);
+               }
             }
         });
     }

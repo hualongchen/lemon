@@ -4,6 +4,9 @@ package com.tr.file.web.controller;
 import com.tr.file.modul.user.LoginForm;
 import com.tr.file.util.ErrorContent;
 import com.tr.file.util.ResultVO;
+import com.tr.file.util.tencent.TencentFileConfig;
+import com.tr.file.util.tencent.TencentFileUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +17,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserController {
+
 
 
     /**
@@ -88,6 +92,8 @@ public class UserController {
 
         System.out.println("sessionId is ======:" + session.getId());
 
+
+        TencentFileUtil util = new TencentFileUtil();
 
         return new ResultVO<>();
 

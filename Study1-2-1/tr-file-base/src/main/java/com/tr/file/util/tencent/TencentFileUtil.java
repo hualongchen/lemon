@@ -2,54 +2,47 @@ package com.tr.file.util.tencent;
 
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
+import com.qcloud.cos.request.UploadFileRequest;
 import com.qcloud.cos.sign.Credentials;
+import lombok.Data;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Component
+
+@Data
 public class TencentFileUtil {
 
 
-    @Autowired
-    private static TencentFileConfig tencentFileConfig;
 
 
     /**
-     * 建造一次客户端请求连接
+     * 上传腾讯云文件
      *
      * @return
      */
 
     @SneakyThrows
-    public static COSClient getClient() {
+    public static String uploadFile(String bucketName,String cosFilePath,String localFilePath,long appId,String secretId,String secretKey) {
 
-        /**
-         华南	gz  华北	     tj    华东	sh
-         西南	cd  新加坡	sgp
-         *
-         */
+
         ClientConfig clientConfig = new ClientConfig();
         clientConfig.setRegion("cd");
-        Credentials cred = new Credentials(tencentFileConfig.getAppId(),
-                tencentFileConfig.getSecretId(),
-                tencentFileConfig.getSecretKey());
+        Credentials cred = new Credentials(appId,secretId,secretKey);
 
-        return new COSClient(clientConfig, cred);
+        COSClient   cosClient = new COSClient(clientConfig, cred);
+
+        UploadFileRequest uploadFileRequest = new UploadFileRequest(bucketName, cosFilePath, localFilePath);
+
+        uploadFileRequest.setEnableShaDigest(false);
+
+        String uploadFileRet = cosClient.uploadFile(uploadFileRequest);
+
+
+        return uploadFileRet ;
 
     }
-
-    /**
-     * 关闭客户端连接
-     *
-     * @param cosClient
-     */
-    @SneakyThrows
-    public static void closeClient(COSClient cosClient) {
-
-        cosClient.shutdown();
-    }
-
-
 
 }

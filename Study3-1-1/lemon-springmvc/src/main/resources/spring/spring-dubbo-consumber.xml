@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">
+
+
+    <!--用于标示和注册消费者-->
+    <dubbo:application name="chenhualong_consumer" owner="mobile" organization="lemon"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+    <!-- 这个接口就是依赖包，我先注释掉-->
+    <!--<dubbo:reference interface="com.zbj.mobile.wireless.MobileUserInfoHandle" id="userInfoHandle"/>-->
+
+</beans>

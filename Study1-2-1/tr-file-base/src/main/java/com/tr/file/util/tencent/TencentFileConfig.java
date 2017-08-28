@@ -19,6 +19,4 @@ public class TencentFileConfig {
     private String secretKey;
 
 
-
-
 }

@@ -1,6 +1,5 @@
 package com.tr.file.util.Lombok;
 
-import com.lemon.chen.controller.user.form.LoginForm;
 import lombok.Value;
 
 /**
@@ -19,7 +18,7 @@ import lombok.Value;
 public class LombokValueTest {
 
 
-    private LoginForm loginForm;
+  //  private LoginForm loginForm;
 
     private String username;
 
