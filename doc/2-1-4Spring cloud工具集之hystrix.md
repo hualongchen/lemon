@@ -1,8 +1,8 @@
 ## (Spring cloud 工具集四）服务容错保护 Hystrix
-###1.0 简介
+###  1.0 简介
 在Spring Cloud Hystrix中实现了线程隔离、断路器等一系列的服务保护功能。它也是基于Netflix的开源框架 Hystrix实现的，该框架目标在于通过控制那些访问远程系统、服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力。Hystrix具备了服务降级、服务熔断、线程隔离、请求缓存、请求合并以及服务监控等强大功能。
 
-###1.1重要的概念
+###  1.1重要的概念
 
 1. 断路器的三个重要参数：快照时间窗、请求总数下限、错误百分比下限。这个参数的作用分别是：
 
@@ -21,9 +21,9 @@ hystrix会启动一个休眠时间窗，在这个时间窗内，降级逻辑是�
 如果此次请求正常返回，那么断路器将继续闭合，主逻辑恢复，如果这次请求依然有问题，
 断路器继续进入打开状态，休眠时间窗重新计时。
 
-###2.0 Hystrix入门使用
+###  2.0 Hystrix入门使用
 #### 首先在服务消费端增加以下依赖
-####2.1 增加maven的依赖
+####  2.1 增加maven的依赖
 
 ```
 <!--需要具体指明version版本的放在下面-->
@@ -41,7 +41,7 @@ hystrix会启动一个休眠时间窗，在这个时间窗内，降级逻辑是�
 
 ```
 
-####2.2 增加Hystrix的maven依赖
+####  2.2 增加Hystrix的maven依赖
 ```
 <!--增加断路器-->
         <dependency>
@@ -50,7 +50,7 @@ hystrix会启动一个休眠时间窗，在这个时间窗内，降级逻辑是�
         </dependency>
 ```
 
-####2.3 启动项进行配置
+####  2.3 启动项进行配置
 
 ```
 @SpringBootApplication
@@ -76,7 +76,7 @@ public class CloudServiceConsumerApplication {
 }
 ```
 
-####2.4  Service层完成服务降级和调用
+####  2.4  Service层完成服务降级和调用
 ```
 /**
  * Created by chenhualong on 2017/7/25.
@@ -113,7 +113,7 @@ public class UserService {
 }
 ```
 
-####2.5 Controller层完成路由
+####  2.5 Controller层完成路由
 ```
 /**
  * Created by chenhualong on 2017/7/25.
@@ -136,8 +136,8 @@ public class HystrixUserController {
 }
 ```
 
-####2.6 增加Hystrix的面板监控(新起一个项目)
-#####2.6.1 增加面板监控的Maven依赖
+####  2.6 增加Hystrix的面板监控(新起一个项目)
+#####  2.6.1 增加面板监控的Maven依赖
 ```
         <!--Hystrix监控面板-->
 		<dependency>
@@ -150,7 +150,7 @@ public class HystrixUserController {
 		</dependency>
 
 ```
-#####2.6.2增加启动项注解
+#####  2.6.2增加启动项注解
 
 ```
 @SpringBootApplication
@@ -164,7 +164,7 @@ public class CloudHystrixDashboardApplication {
 }
 ```
 
-#####2.6.3 增加微服务的监控注解
+#####  2.6.3 增加微服务的监控注解
 ```
 
 @SpringBootApplication
@@ -179,7 +179,7 @@ public class CloudUserServerApplication {
 	}
 }
 ```
-#####2.6.4 监控相关讲解
+#####  2.6.4 监控相关讲解
 ```
 1. 监控的三种模式
 默认的集群监控：通过URLhttp://turbine-hostname:port/turbine.stream开启，实现对默认集群的监控。
@@ -240,7 +240,7 @@ turbine.combine-host-port参数设置为true，可以让同一主机上的服务
 http://localhost:8989/turbine.stream
 
 
-###3.0 实战案例与Demo
+###  3.0 实战案例与Demo
 
 https://github.com/hualongchen/lemon
 

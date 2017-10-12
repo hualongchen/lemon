@@ -1101,7 +1101,7 @@ public class Study114ApplicationTests {
 }
 ```
 
-#### 2.4 spring boot进行监控
+####   2.4 spring boot进行监控
 #####  2.4.1 增加maven的依赖
 
 ```

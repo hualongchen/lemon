@@ -38,7 +38,7 @@
 | zebra stripes | are neat      |    $1 |
 
 
-##代码框
+## 代码框
 
 ```
 @requires_authorization

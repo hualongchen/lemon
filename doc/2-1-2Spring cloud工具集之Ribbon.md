@@ -1,15 +1,15 @@
 ## (Spring cloud 工具集二）客户端负责均衡Ribbon
 
-###1.0 简介
+### 1.0 简介
 Ribbon是一个客户端负载均衡器，它可以很好地控制HTTP和TCP客户端的行为。Feign已经使用Ribbon。
 
 在使用Spring Cloud Ribbon的时候，不论是与Eureka还是Consul结合，都会在引入Spring Cloud Eureka或Spring Cloud Consul依赖的时候通过自动化配置来加载上述所说的配置内容，所以我们可以快速在Spring Cloud中实现服务间调用的负载均衡。
 
-###2.0 Ribbon实践
+### 2.0 Ribbon实践
 
 这些个模块都是增加到服务消费端上，切莫加错了！
 
-####2.1 增加spring cloud的依赖
+#### 2.1 增加spring cloud的依赖
 
 ```
 <!--需要具体指明version版本的放在下面-->
@@ -35,7 +35,7 @@ Ribbon是一个客户端负载均衡器，它可以很好地控制HTTP和TCP客�
 		</dependency>
 ``` 
 
-####2.3启动项增加注解项
+#### 2.3启动项增加注解项
 
 ```
 @SpringBootApplication
@@ -61,7 +61,7 @@ public class CloudServiceConsumerApplication {
 
 ```
 
-####2.4利用RestTemplate进行微服务调用（erueka上查找服务）
+#### 2.4利用RestTemplate进行微服务调用（erueka上查找服务）
 
 ```
 
@@ -97,7 +97,7 @@ public class CloudServiceConsumerApplication {
 
 ```
 
-####2.5 对template同样可以进行一些属性的编辑
+#### 2.5 对template同样可以进行一些属性的编辑
 
 ```
 @Bean
@@ -111,7 +111,7 @@ public class CloudServiceConsumerApplication {
     }
 ```
 
-####2.6 落实到配置文件
+#### 2.6 落实到配置文件
 ```
 开启重试机制
 spring.cloud.loadbalancer.retry.enabled=true
@@ -129,10 +129,10 @@ hello-service.ribbon.MaxAutoRetriesNextServer=2
 hello-service.ribbon.MaxAutoRetries=1
 ```
 
-###3.0 实战案例与Demo
+### 3.0 实战案例与Demo
 
 https://github.com/hualongchen/lemon
 
-####**有疑问和兴趣，请添加个人公众号**
+#### **有疑问和兴趣，请添加个人公众号**
 
 ![输入图片说明](http://7xordd.com1.z0.glb.clouddn.com/qrcode_for_gh_363af0fc9423_430.jpg "在这里输入图片标题")

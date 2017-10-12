@@ -94,7 +94,7 @@ spring.session.store-type=redis
 
 ```
 
-####4.4 整合spring session
+####  4.4 整合spring session
 ```
 package com.lemon.chen.util.session;
 

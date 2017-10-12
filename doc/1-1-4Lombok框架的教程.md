@@ -62,7 +62,7 @@ Laziness is a virtue!
 Captain's Log, stardate 24435.7: "What was that line again?"
 ```
 
-####2. 4 每个注解简介
+#### 2.4 每个注解简介
 
 1. val:这不是一个注解，用于局部变量声明，减少重复输入
 

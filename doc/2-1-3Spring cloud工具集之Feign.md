@@ -1,11 +1,11 @@
 ## (Spring cloud 工具集三）声明式Http客户端Feign
 
-###1.0 简介
+### 1.0 简介
 Feign是一个声明式的Web服务客户端。这使得Web服务客户端的写入更加方便 要使用Feign创建一个界面并对其进行注释。它具有可插入注释支持，包括Feign注释和JAX-RS注释。Feign还支持可插拔编码器和解码器。Spring Cloud增加了对Spring MVC注释的支持，并使用Spring Web中默认使用的HttpMessageConverters。Spring Cloud集成Ribbon和Eureka以在使用Feign时提供负载均衡的http客户端。
 
-###2.0 Feign的入门使用
+### 2.0 Feign的入门使用
 
-####2.1 增加maven的依赖
+#### 2.1 增加maven的依赖
 
 ```
 <!--需要具体指明version版本的放在下面-->
@@ -23,7 +23,7 @@ Feign是一个声明式的Web服务客户端。这使得Web服务客户端的写
 
 ```
 
-####2.2 增加feign的maven依赖
+#### 2.2 增加feign的maven依赖
 
 ```
 
@@ -34,7 +34,7 @@ Feign是一个声明式的Web服务客户端。这使得Web服务客户端的写
         </dependency>
 ```
 
-####2.3 启动项开启
+####  2.3 启动项开启
 
 ```
 @SpringBootApplication
@@ -61,7 +61,7 @@ public class CloudServiceConsumerApplication {
 
 ```
 
-####2.4 增加匹配服务的接口
+####  2.4 增加匹配服务的接口
 
 ```
 /**
@@ -85,7 +85,7 @@ public interface UserClient {
 
 ```
 
-####2.5业务的controller层实现调用
+####  2.5业务的controller层实现调用
 
 ```
 /**
@@ -107,7 +107,7 @@ public class FeignUserController {
 }
 ```
 
-###3.0 实战案例与Demo
+###  3.0 实战案例与Demo
 
 https://github.com/hualongchen/lemon
 

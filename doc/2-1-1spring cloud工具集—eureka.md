@@ -47,7 +47,7 @@
 ```
 ### 4.0 服务注册搭建
 
-####1.0.启动类增加注解
+#### 1.0.启动类增加注解
 
 @EnableEurekaServer相当于开启此功能 
 
@@ -62,7 +62,7 @@ public class CloudEurekaServerApplication {
 }
 ```
 
-####2.0. application.properties 的配置
+#### 2.0. application.properties 的配置
 
 ```
 指定默认的日志格式为logback
@@ -111,7 +111,7 @@ public class CloudUserServerApplication {
 	}
 }
 ```
-####5.3 application.xml的配置
+#### 5.3 application.xml的配置
 ```
 spring.application.name=user-service-provider
 server.port=9000
@@ -125,7 +125,7 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
 - 启动微服务：http://localhost:9000
 - 观察8761端口界面对应的服务注册信息
 
-###7.0 eureka集群配置
+### 7.0 eureka集群配置
 
 #### 7.1 节点A配置文件
 ```
