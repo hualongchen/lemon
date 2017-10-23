@@ -1,7 +1,8 @@
-package com.lemon.activity.studyactivity;
+package com.lemon.activity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class StudyactivityApplication {
@@ -10,3 +11,5 @@ public class StudyactivityApplication {
 		SpringApplication.run(StudyactivityApplication.class, args);
 	}
 }
+
+

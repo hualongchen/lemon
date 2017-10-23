@@ -1,0 +1,54 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/activiti?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root" />
+    </bean>
+
+    <!--将数据库连接注入到工作流引擎中-->
+    <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+        <!-- 连接数据的配置 -->
+        <property name="dataSource" ref="datasource"/>
+        <!-- 没有表创建表 -->
+        <property name="databaseSchemaUpdate" value="true"/>
+        <!--流程缓存-->
+        <property name="processDefinitionCacheLimit" value="10"/>
+        <!--加载监听器，流程引擎中配置的事件监听器会在流程引擎启动时生效，引擎重启后也会保持有效-->
+        <!--<property name="eventListeners">
+            <list>
+                <bean class="com.lemon.activity.studyactivity.web.EventListener"/>
+            </list>
+        </property>-->
+    </bean>
+
+
+    <!--     上方流程引擎实现类不同的具体含义
+
+       1. org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration：流程引擎独立运行。Activiti自行处理事务。在默认情况
+下，数据库检查只在引擎启动时进行（如果Activiti表结构不存在或表结构版本不对，会抛出异常）。
+
+       2.org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration：这是一个便于使用单元测试的类。Activiti自行处
+理事务。默认使用H2内存数据库。数据库会在引擎启动时创建，并在引擎关闭时删除。使用这个类时，很可能不需要更多的配置（除了使用任务执行器或邮件功能等时）。
+
+       3.org.activiti.spring.SpringProcessEngineConfiguration：在流程引擎处于Spring环境时使用。
+
+       4.org.activiti.engine.impl.cfg.JtaProcessEngineConfiguration：用于引擎独立运行，并使用JTA事务的情况
+    -->
+
+
+    <!--
+
+    databaseSchemaUpdate: 用于设置流程引擎启动关闭时使用的数据库表结构控制策略。
+                   false (默认): 当引擎启动时，检查数据库表结构的版本是否匹配库文件版本。版本不匹配时抛出异常。
+                          true: 构建引擎时，检查并在需要时更新表结构。表结构不存在则会创建。
+                  create‐drop: 引擎创建时创建表结构，并在引擎关闭时删除表结构。
+    -->
+
+
+</beans>
