@@ -1,0 +1,41 @@
+1. spring boot 简介
+
+2. spring boot 结构
+
+3. spring boot 包规范
+
+4. spring boot 配置文件
+
+5. spring boot 基础用法
+
+6. spring boot 整合其他框架
+
+7. logback 日志
+
+8. swagger 接口设计
+
+9. lombok 清洁代码使用
+
+10 generatorConfig 通用工具【01 代码生成  02 通用mapper整合 03 分页插件整合】
+
+11  druid数据库连接池整合
+
+12 私密文件处理
+
+
+13  ----------------------spring cloud -------------------------------
+
+1. eureka 服务注册中心 【服务端】 只做请求转发
+
+2 ribbon 客户端负载均衡  【客户端】 由他进行负载决定连接那个eureka
+
+3 feign  声明式服务调用，增加了http远程调用能力
+
+4. Hystrix  服务容错， 服务降级、服务熔断、线程隔离、请求缓存、请求合并以及服务监控。
+
+5. Zuul  , 网关，做反向代理，统一请求入口
+
+6. config , 集中服务配置文件
+
+
+
