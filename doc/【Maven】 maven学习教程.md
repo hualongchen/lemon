@@ -79,8 +79,8 @@ Mvn 远程仓库地址：http://mvnrepository.com/
      <!--releases 连接发布版本项目仓库-->  
       <id>releases</id>  
       <!--访问releases这个私服上的仓库所用的账户和密码-->  
-      <username>admin</username>  
-      <password>admin123</password>  
+      <username>XXXXXX</username>  
+      <password>XXXXXXX</password>  
     </server> 
 
 
@@ -88,22 +88,22 @@ Mvn 远程仓库地址：http://mvnrepository.com/
     <!--snapshots 连接测试版本项目仓库-->  
       <id>snapshots</id>  
       <!--访问releases这个私服上的仓库所用的账户和密码-->  
-      <username>admin</username>  
-      <password>admin123</password> 
+      <username>XXXXX/username>  
+      <password>XXXXX</password> 
       </server>
 
     <server> 
       <id>maven-central</id>  
       <!--访问releases这个私服上的仓库所用的账户和密码-->  
-      <username>admin</username>  
-      <password>admin123</password> 
+      <username>XXXXX</username>  
+      <password>XXXXX</password> 
       </server>
 
 <server> 
       <id>maven-3rdParty</id>  
       <!--访问releases这个私服上的仓库所用的账户和密码-->  
-      <username>admin</username>  
-      <password>admin123</password> 
+      <username>XXXXX</username>  
+      <password>XXXXX</password> 
       </server>
 
  ```
