@@ -3,25 +3,52 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>lemon-maven-parent</artifactId>
+        <artifactId>demoparent</artifactId>
         <groupId>com.lemon</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>lemon-maven-dao</artifactId>
+    <artifactId>demo-dao</artifactId>
 
 
     <dependencies>
-
-        <!--确定各个模块的依赖-->
+        <!--模块依赖-->
         <dependency>
             <groupId>com.lemon</groupId>
-            <artifactId>lemon-maven-module</artifactId>
+            <artifactId>demo-moudle</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Spring boot 基础类-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--简化get set  log代码-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- 生成dao层代码 -->
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <!-- 生成dao层代码插件 -->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>3.4.0</version>
         </dependency>
 
     </dependencies>
-
 
 
     <build>
@@ -30,6 +57,7 @@
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
                 <configuration>
                     <configurationFile>src/main/resources/MapperGeneratorConfig.xml</configurationFile>
                     <overwrite>true</overwrite>
@@ -48,7 +76,10 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
         </plugins>
     </build>
+
+
 
 </project>
