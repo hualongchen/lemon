@@ -79,8 +79,8 @@ Mvn 远程仓库地址：http://mvnrepository.com/
      <!--releases 连接发布版本项目仓库-->  
       <id>releases</id>  
       <!--访问releases这个私服上的仓库所用的账户和密码-->  
-      <username>XXXXXX</username>  
-      <password>XXXXXXX</password>  
+      <username>admin</username>  
+      <password>admin123</password>  
     </server> 
 
 
@@ -88,22 +88,22 @@ Mvn 远程仓库地址：http://mvnrepository.com/
     <!--snapshots 连接测试版本项目仓库-->  
       <id>snapshots</id>  
       <!--访问releases这个私服上的仓库所用的账户和密码-->  
-      <username>XXXXX/username>  
-      <password>XXXXX</password> 
+      <username>admin</username>  
+      <password>admin123</password> 
       </server>
 
     <server> 
       <id>maven-central</id>  
       <!--访问releases这个私服上的仓库所用的账户和密码-->  
-      <username>XXXXX</username>  
-      <password>XXXXX</password> 
+      <username>admin</username>  
+      <password>admin123</password> 
       </server>
 
 <server> 
       <id>maven-3rdParty</id>  
       <!--访问releases这个私服上的仓库所用的账户和密码-->  
-      <username>XXXXX</username>  
-      <password>XXXXX</password> 
+      <username>admin</username>  
+      <password>admin123</password> 
       </server>
 
  ```
@@ -187,73 +187,23 @@ Import：导入依赖范围。（了解即可）使用 dependencyManagement 时�
 ```
 先配置web层的pom文件
 
-<build>
-        <!-- 为jar包取名 -->
-        <finalName>lemon-start</finalName>
+ <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.3.0.RELEASE</version>
-            </plugin>
-        </plugins>
-    </build>
-    
-
-配置最外层项目的pom文件
-
-
-
-<build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.3.0.RELEASE</version>
-                <configuration><!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.lemon.maven.Application</mainClass>
-                    <layout>ZIP</layout>
-                </configuration>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                            <goal>repackage</goal>
                         </goals>
-                        <!--可以生成不含依赖包的不可执行Jar包-->
-                        <!-- configuration>
-                          <classifier>exec</classifier>
-                        </configuration> -->
                     </execution>
                 </executions>
-            </plugin>
-            <!--mybatis生成代码-->
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
-                <configuration>
-                    <configurationFile>src/main/resources/MapperGeneratorConfig.xml</configurationFile>
-                    <overwrite>true</overwrite>
-                    <verbose>true</verbose>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.21</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>tk.mybatis</groupId>
-                        <artifactId>mapper</artifactId>
-                        <version>3.4.0</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
     
-    
-    然后执行mvn  package  ，就可以打出可执行的包了。注意打包顺序，被依赖的先打。
+ ，就可以打出可执行的包了。注意打包顺序，被依赖的先打。
     
     [INFO] Reactor Summary:
 [INFO] 
@@ -325,3 +275,213 @@ mvn -Dmaven.test.skip=true : 忽略测试文档编译
 - remote storage location 里面填写; http://repo1.maven.org/maven2/
 
 
+
+### 11. 常用的maven的插件
+
+
+```
+maven-jetty-plugin
+
+输入：mvn jetty:run。这将在端口为8080的Jetty服务器上启动你的项目。Jetty将持续运行，直到插件是明确停止。例如，按下<ctrl-c>，或使用mvn jetty:stop命令
+
+
+ <build>
+        <finalName>rop-sample</finalName>
+        <plugins>
+            <!-- jetty插件 -->
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.5</version>
+                <configuration>
+                    <webAppSourceDirectory>src/main/webapp</webAppSourceDirectory>
+                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <contextPath>/</contextPath>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8088</port>
+                        </connector>
+                    </connectors>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+```
+
+
+```
+ maven-compiler-plugin 编译源代码
+
+<plugins> 
+         <plugin> 
+            <groupId>org.apache.maven.plugins</groupId> 
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.1</version> 
+            <configuration>
+                <encoding>UTF8</encoding> 
+            </configuration> 
+         </plugin> 
+    </plugins>
+
+```
+
+
+```
+
+maven-compiler-plugin  需要在编译和生成的时候使用不同的jdk版本
+
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+
+```
+
+```
+maven-war-plugin 
+
+打包war项目的时候排除某些web资源文件，这时就应该配置maven-war-plugin如下
+
+　<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>2.1.1</version>
+    <configuration>
+      <webResources>
+        <resource>
+          <directory>src/main/webapp</directory>
+          <excludes>
+            <exclude>**/*.jpg</exclude>
+          </excludes>
+        </resource>
+      </webResources>
+    </configuration>
+  </plugin>
+
+```
+
+
+```
+
+
+maven-source-plugin  生成源码包
+
+ <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-source-plugin</artifactId>
+    <version>2.1.2</version>
+    <executions>
+      <execution>
+        <id>attach-sources</id>
+        <phase>verify</phase>
+        <goals>
+          <goal>jar-no-fork</goal>
+        </goals>
+      </execution>
+    </executions>
+  </plugin>
+```
+
+
+```
+ maven-javadoc-plugin 生成javadoc包
+<plugin>          
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-javadoc-plugin</artifactId>
+    <version>2.7</version>
+    <executions>
+      <execution>
+        <id>attach-javadocs</id>
+          <goals>
+            <goal>jar</goal>
+          </goals>
+      </execution>
+    </executions>
+  </plugin> 
+```
+
+
+```
+maven-assembly-plugin
+它支持各种打包文件格式，包括zip、tar.gz、tar.bz2等等，通过一个打包描述文件（该例中是src/main/assembly.xml），它能够帮助用户选择具体打包哪些文件集合、依赖、模块、和甚至本地仓库文件，每个项的具体打包路径用户也能自由控制。如下就是对应上述需求的打包描述文件src/main/assembly.xml
+
+
+<assembly>
+  <id>bin</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <dependencySets>
+    <dependencySet>
+      <useProjectArtifact>true</useProjectArtifact>
+      <outputDirectory>lib</outputDirectory>
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+    <fileSet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>README.txt</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/scripts</directory>
+      <outputDirectory>/bin</outputDirectory>
+      <includes>
+        <include>run.sh</include>
+        <include>run.bat</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>
+
+
+
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.2.1</version>
+    <configuration>
+      <descriptors>
+        <descriptor>src/main/assembly/assembly.xml</descriptor>
+      </descriptors>
+    </configuration>
+    <executions>
+      <execution>
+        <id>make-assembly</id>
+        <phase>package</phase>
+        <goals>
+          <goal>single</goal>
+        </goals>
+      </execution>
+    </executions>
+  </plugin>
+```
+
+
+```
+maven-surefire-plugin 打包时跳过单元测试
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.16</version>
+    <configuration>
+        <forkMode>once</forkMode>
+        <argLine>-Dfile.encoding=UTF-8</argLine>
+</plugin>
+
+```
+
+
+```
+
+
+```
