@@ -482,6 +482,6 @@ maven-surefire-plugin 打包时跳过单元测试
 
 
 ```
-
+[Maven的学习教程对应的代码](https://github.com/hualongchen/lemon/tree/master/demoparent)
 
 ```
