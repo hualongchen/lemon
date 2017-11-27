@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
 
         springBootUserPOMapper.insert(springBootUserPO);
 
-
         return springBootUserPOMapper.selectAll().get(0);
     }
 }

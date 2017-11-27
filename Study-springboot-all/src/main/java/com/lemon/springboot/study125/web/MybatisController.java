@@ -40,11 +40,50 @@ public class MybatisController {
 
     }
 
+
+    @GetMapping("/mybatis1")
+    public Object  test1(){
+
+        SpringBootUserPO  springBootUserPO = new SpringBootUserPO();
+
+        springBootUserPO.setUsername("通融3");
+
+        springBootUserPO.setId(1);
+
+        return  springBootUserPOMapper.findbyUserName(springBootUserPO);
+    }
+
+
+    @GetMapping("/mybatis2")
+    public Object  test11(){
+
+        SpringBootUserPO  springBootUserPO = new SpringBootUserPO();
+
+        springBootUserPO.setUsername("通融3");
+        return  springBootUserPOMapper.findbyUserName2(springBootUserPO);
+    }
+
+
+
+    @GetMapping("/mybatis3")
+    public Object  test111(){
+
+        SpringBootUserPO  springBootUserPO = new SpringBootUserPO();
+
+        springBootUserPO.setUsername("通融3");
+        return  springBootUserPOMapper.findbyUserName3(springBootUserPO);
+    }
+
+
+
+
+
+
     /**
      * 测试二，联通mybatis表加事务
      * @return
      */
-    @GetMapping("/mybatis2")
+    @GetMapping("/mybatis5")
     public Object test2(){
 
         SpringBootUserPO  springBootUserPO = new SpringBootUserPO();
@@ -53,4 +92,7 @@ public class MybatisController {
 
         return userService.addUser(springBootUserPO);
     }
+
+
+
 }

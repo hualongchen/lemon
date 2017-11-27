@@ -55,14 +55,14 @@
     </appender>
 
     <!--定义dao-error日志-->
-    <appender name="dao-error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${logger.root}/${appname}-dao-error.log</file>
+    <appender name="dao-debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logger.root}/${appname}-dao-debug.log</file>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>ERROR</level>
+            <level>DEBUG</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>
-                ${logger.root}/${appname}-dao-error.log.%d{yyyy-MM-dd}.%i
+                ${logger.root}/${appname}-dao-debug.log.%d{yyyy-MM-dd}.%i
             </fileNamePattern>
             <maxHistory>30</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -164,7 +164,7 @@
     <logger name="com.lemon.springboot.study125.dao" level="INFO"  additivity="false">
 
         <appender-ref ref="STDOUT" />
-        <appender-ref ref="dao-error" />
+        <appender-ref ref="dao-debug" />
     </logger>
 
     <logger name="com.lemon.springboot.study125.util" level="INFO"  additivity="false">
