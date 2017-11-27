@@ -1,13 +1,13 @@
 #   1-1-3  Linux安装mysql文档
 
-###  1.1  安装mysql源码包
+###    1.1  安装mysql源码包
 
 ```
 sudo apt-get install mysql-server
 sudo apt-get install mysql-client
 sudo apt-get install libmysqlclient-dev
 ```
-###   1.2安装过程请输入密码 
+###    1.2安装过程请输入密码 
 
 ###  1.3  进行连接尝试
 ```
